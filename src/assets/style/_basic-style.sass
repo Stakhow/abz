@@ -1,0 +1,81 @@
+//=== Import Variables ===
+@import "../../assets/style/variables"
+
+img
+  max-width: 100%
+  height: auto
+
+a
+  text-decoration: none
+  color: inherit
+  transition: $transition
+  &:hover
+    transition: $transition
+    color: $primary_color
+
+button
+  cursor: pointer
+  border: none
+  outline: 0
+  background-color: transparent
+
+//=== sign-out button style ===
+.sign-out
+  transition: $transition
+  &:hover
+    transition: $transition
+    svg, g
+      fill: #2638bb
+  &:disabled, &.disabled
+    svg, g
+      fill: #283593
+
+
+//=== Common section style ===
+.common-section
+  padding: 140px 0
+  @extend %bg-cover
+
+
+//=== Section title ===
+.section-title
+  margin-bottom: 35px
+  text-align: center
+  margin-left: auto
+  margin-right: auto
+  max-width: 550px
+
+//=== Common button style ===
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 290px
+  height: 40px
+  border-radius: 4px
+  font-family: $font-family-base
+  font-size: 20px
+  font-weight: 700
+  transition: $transition
+  line-height: 1
+  &:hover
+    transition: $transition
+  &:disabled
+    background-color: #d7d7d7
+    color: #8d8c8c
+
+
+//=== Primary link style ===
+.link
+  transition: $transition
+  &:hover
+    transition: $transition
+  &-primary
+    color: $primary_color
+    font-family: $font-family-base
+    font-size: 22px
+    font-weight: 700
+    &:hover
+      color: #fc831f
+
+

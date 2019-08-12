@@ -1,0 +1,138 @@
+//=== Import Variables ===
+@import "../../assets/style/variables"
+
+.input-item
+  position: relative
+  padding: 10px 0 20px
+  margin-bottom: 20px
+  &.error-input
+    label
+      color: $red
+    input
+      border: 1px solid $red
+      &:focus
+        border: 2px solid $red
+  &.success-input
+    label
+      color: $green
+    input
+      border: 1px solid $green
+      &:focus
+        border: 2px solid $green
+  label
+    position: absolute
+    top: 4px
+    left: 18px
+    background-color: #fff
+    display: inline-block
+    color: #8d8c8c
+    font-family: $font-family-base
+    font-size: 12px
+    line-height: 1
+    padding: 0 4px
+    z-index: 2
+    &.error
+      top: auto
+      bottom: 0
+      color: $red
+      animation: slide_in .3s linear
+
+  &>input
+    height: 56px
+
+  // === INPUT TYPE FILE styles ===
+  &_file
+    position: relative
+    &>input
+      cursor: pointer
+    &.error-input
+      input
+        &+.input-item_file-helper
+          border: 1px solid $red
+        &:focus
+          &+.input-item_file-helper
+            border: 2px solid $red
+      .btn-upload
+        color: $primary_color
+    &.success-input
+      input
+        &+.input-item_file-helper
+          border: 1px solid $green
+          color: $black
+        &:focus
+          &+.input-item_file-helper
+            border: 2px solid $green
+    .btn-upload
+      position: absolute
+      color: $primary_color
+      font-size: 20px
+      font-weight: 700
+      line-height: 60px
+      width: 130px
+      height: 56px
+      background-color: #fff
+      border-radius: 0 4px 4px 0
+      border: 2px solid $primary_color
+      top: 10px
+      left: auto
+      right: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      cursor: pointer
+      z-index: 3
+      &:hover
+        background-color: rgba(252, 131, 31, 0.2)
+    &.success-input
+      .btn-upload
+        color: $primary_color
+    &-helper
+      position: absolute
+      display: flex
+      align-items: center
+      top: 10px
+      border: 1px solid #b7b7b7
+      padding: 0 147px 0 17px
+      border-radius: 4px
+      height: 56px
+      right: 0
+      left: 0
+      z-index: 2
+      pointer-events: none
+      color: $grey
+
+
+  input
+    &[type=file]
+      position: static
+      opacity: 0
+
+
+input, select
+  width: 100%
+  height: 56px
+  border-radius: 4px
+  border: 1px solid #b7b7b7
+  padding: 0 17px
+  color: $black
+  font-family: inherit
+  font-size: 16px
+  font-weight: 400
+  background-color: transparent
+  &::placeholder
+    color: $grey
+    font-family: inherit
+    font-size: 16px
+    font-weight: 400
+  &:active, &:focus
+    border: 2px solid #b7b7b7
+    outline: none
+    box-shadow: unset
+
+
+
+@keyframes slide_in
+  0%
+    transform: translate(-200%, -200%) scale(0)
+  100%
+    transform: translate(0, 0) scale(1)

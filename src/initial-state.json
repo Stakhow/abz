@@ -1,0 +1,18 @@
+{
+  "main-menu" : [
+    {"link": "#about", "text": "About me"},
+    {"link": "#relationships", "text": "Relationships"},
+    {"link": "#requirements", "text": "Requirements"},
+    {"link": "#users", "text": "Users"},
+    {"link": "#registration", "text": "Sign Up"}
+  ],
+
+  "some-info" : [
+    {"aaa": "#about", "bbb": "About me"},
+    {"aaa": "#relationships", "bbb": "Relationships"},
+    {"aaa": "#requirements", "bbb": "Requirements"},
+    {"aaa": "#users", "bbb": "Users"},
+    {"aaa": "#registration", "bbb": "Sign Up"}
+  ]
+
+}

@@ -1,0 +1,26 @@
+@import './../../assets/style/variables'
+
+.social-links
+  list-style: none
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  padding: 0
+  margin: 0 -10px
+  li
+    margin: 0 10px
+  a
+    width: 26px
+    height: 26px
+
+    display: inline-block
+    svg
+      border-radius: 7px
+    &:hover
+      svg
+
+        background-color: #fff
+        transition: $transition
+        path
+          fill: $primary_color
+

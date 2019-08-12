@@ -1,0 +1,107 @@
+
+// ************************************
+//          Responsive
+// *************************************
+
+$xl: 1200px;
+$lg: 991px;
+$md: 768px;
+$sm: 576px;
+
+
+// ************************************
+//          Colors
+// ************************************
+
+$txt_color: #4c4b4b;
+$primary_color: #ef6c00;
+$secondary_color: #283593;
+$red: #f44336;
+$green: rgba(0, 132, 0, 0.5);
+$grey: #8d8c8c;
+$black: #010000;
+
+
+
+
+// ************************************
+//          Animation
+// ************************************
+
+$transition: 0.3s all ease-in-out;
+$transition-svg: 0.5s all ease-in-out;
+
+
+// ************************************
+//          Functions
+// ************************************
+
+
+@function get-vw($target){
+  $vw-context: (1920 * 0.01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@function get-vw-1170($target){
+  $vw-context: (1170 * 0.01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+@function get-vw-x($target, $mediaQuery){
+  $vw-context: ($mediaQuery * 0.01) * 1px;
+  @return ($target / $vw-context) * 1vw;
+}
+
+@function font-min($target){
+  @return ($target * 0.8 );
+}
+
+@function toRem($font-size){
+  @return ($font-size / 16px) * 1rem;
+}
+
+@function toEm($font-size1, $font-size2){
+  @return ($font-size2 / $font-size1) * 1em;
+}
+
+%bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+}
+
+%bg-auto {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+}
+
+%bg-contain {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+
+// ************************************
+//          Custom spacings
+// ************************************
+
+
+$spacer: 16px;
+
+.mb-6 {
+  margin-bottom: ($spacer * 4) !important;
+}
+
+.mb-7 {
+  margin-bottom: ($spacer * 5) !important;
+}
+
+
+// ************************************
+//          Font
+// *************************************
+
+$font-family-base: "Source Sans Pro";
+$font-family-title: "Overpass";

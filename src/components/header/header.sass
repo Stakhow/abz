@@ -1,0 +1,38 @@
+@import "./../../assets/style/variables"
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  padding: 12px 0
+  background-color: #fff
+  z-index: 10
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  transition: $transition
+  &>.container,&>.container>.row
+    height: 100%
+  .spinner
+    width: 50px
+  .logo
+    a
+      transition: $transition
+  .main-menu
+    a
+      transition: $transition
+
+  &.scrolled
+    padding: 5px 0
+    transition: $transition
+    .logo
+      a
+        max-width: 100px
+    .main-menu
+      li
+        padding: 0 10px
+      a
+        font-size: 12px
+        transition: $transition
+    .user-cabinet
+      transition: $transition
+      transform: scale(0.8)

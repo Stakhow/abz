@@ -1,0 +1,14 @@
+//=== Import Variables ===
+@import "../../assets/style/variables"
+
+.btn-primary
+  background-color: $primary_color
+  color: #fff
+  &:disabled
+    cursor: not-allowed
+  &:not(&:disabled)
+    &:hover
+      background-color: #fc831f
+      color: #fefefe
+    &:focus
+      box-shadow: 0 0 16px #fc831f

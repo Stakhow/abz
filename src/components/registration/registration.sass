@@ -1,0 +1,27 @@
+//=== Import Variables ===
+@import "../../assets/style/variables"
+
+
+.registration
+  padding-bottom: 150px
+  .spinner
+    max-width: 50px
+
+.alert
+  text-align: center
+  font-size: 18px
+  animation: fade_out 3s linear 1s
+  &-success
+    color: #2abd20
+  &-error
+    color: $red
+
+
+
+
+
+@keyframes fade_out
+  0%
+    opacity: 1
+  100%
+    opacity: 0

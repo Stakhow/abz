@@ -1,0 +1,31 @@
+//=== Import Variables ===
+@import "../../assets/style/variables"
+
+.user
+  &-item
+    margin-bottom: 60px
+    @media screen and (max-width: $lg)
+      text-align: center
+  &-photo
+    overflow: hidden
+    width: 70px
+    min-width: 70px
+    height: 70px
+    margin-right: 10px
+    background-image: url(../../media/icons/ico_user.svg)
+    @extend %bg-cover
+    background-size: 97%
+    @media screen and (max-width: $lg)
+      margin: 0 auto 15px
+    img
+      display: inline-block
+      border-radius: 50%
+
+
+  &-info
+    word-break: break-all
+    p
+      margin: 0
+    a
+      &:hover
+        color: $primary_color
