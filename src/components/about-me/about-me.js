@@ -1,16 +1,18 @@
 import React from 'react';
 import './about-me.sass';
 
-
 import img_src from './../../media/img/man-mobile.svg';
+import { connect } from 'react-redux';
 
-const AboutMe = () => {
+const AboutMe = ({props}) => {
+    const {title, subtitle, content, button, image} = props;
+    const Content = () => { return content.map( (item, idx) => { return <p key={idx}>{item}</p> }) };
     return (
         <section id="about" className="about-me mb-7">
             <div className="container">
                 <div className="row">
                     <div className="col-12 section-title">
-                        <h2>Let's get ac quainted</h2>
+                        <h2>{title}</h2>
                     </div>
                 </div>
                 <div className="row">
@@ -19,9 +21,8 @@ const AboutMe = () => {
                     </div>
                     <div className="col-lg-8">
 
-                        <h3>I am cool frontend developer</h3>
-                        <p>When real users have a slow experience on mobile, they're much less likely to find what they are looking for or purchase from you in the future. For many sites this equates to a huge missed opportunity, especially when more than half of visits are abandoned if a mobile page takes over 3 seconds to load.</p>
-                        <p>Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience on the web.</p>
+                        <h3>{subtitle}</h3>
+                        <Content/>
                         <a href="#registation" className="link link-primary">Sign Up</a>
                     </div>
                 </div>
@@ -30,4 +31,10 @@ const AboutMe = () => {
     )
 }
 
-export default AboutMe;
+const mapStateToProps = (state) => {
+    return {
+        props: state["about"]
+    }
+}
+
+export default connect(mapStateToProps)(AboutMe);

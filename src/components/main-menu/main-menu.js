@@ -2,15 +2,8 @@ import React from "react";
 import './main-menu.sass'
 import { connect } from 'react-redux';
 
-const MainMenu  = () => {
-    // console.log('testing', this.props.state);
-    const menuData = [
-        {link: "#about", text: "About me"},
-        {link: "#relationships", text: "Relationships"},
-        {link: "#requirements", text: "Requirements"},
-        {link: "#users", text: "Users"},
-        {link: "#registration", text: "Sign Up"},
-    ];
+const MainMenu  = ({menuData}) => {
+
     return (
         <nav className="main-menu">
             <ul>
@@ -24,8 +17,13 @@ const MainMenu  = () => {
     )
 }
 
+
 const mapStateToProps = (state) => {
-    return state["main-menu"];
+    return {
+        menuData : state["main-menu"]
+    }
 }
 
 export default connect(mapStateToProps)(MainMenu);
+
+

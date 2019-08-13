@@ -11,7 +11,7 @@ import * as actions from './actions/actions';
 const store = createStore(reducer);
 const { dispatch } = store;
 
-const { getMenu } = bindActionCreators(actions, dispatch);
+// const { getMenu } = bindActionCreators(actions, dispatch);
 
 
 
@@ -19,8 +19,6 @@ store.subscribe(()=>{
     console.log(store.getState());
 });
 
-document.querySelector('body')
-    .addEventListener('click', getMenu);
 
 ReactDOM.render(
     <Provider store={store}>

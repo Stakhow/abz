@@ -7,12 +7,28 @@
     {"link": "#registration", "text": "Sign Up"}
   ],
 
-  "some-info" : [
-    {"aaa": "#about", "bbb": "About me"},
-    {"aaa": "#relationships", "bbb": "Relationships"},
-    {"aaa": "#requirements", "bbb": "Requirements"},
-    {"aaa": "#users", "bbb": "Users"},
-    {"aaa": "#registration", "bbb": "Sign Up"}
-  ]
+  "banner" : {
+    "title" : "Test assignment for Frontend Developer position",
+    "content": [
+      "We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository.",
+      "Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck!"
+    ],
+    "button": {
+      "link" : "#registation",
+      "text" : "Sign up"
+    }
+  },
+  "about": {
+    "title": "Let's get ac quainted",
+    "subtitle": "",
+    "content": [
+      "When real users have a slow experience on mobile, they're much less likely to find what they are looking for or purchase from you in the future. For many sites this equates to a huge missed opportunity, especially when more than half of visits are abandoned if a mobile page takes over 3 seconds to load.",
+      "Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience on the web."
+    ],
+    "button": {
+      "link" : "#registation",
+      "text" : "Sign up"
+    }
+  }
 
 }
