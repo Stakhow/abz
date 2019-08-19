@@ -60,9 +60,11 @@ button
   line-height: 1
   &:hover
     transition: $transition
-  &:disabled
+  &:disabled, &:disabled:hover
     background-color: #d7d7d7
     color: #8d8c8c
+    border-color: #d7d7d7
+    cursor: not-allowed
 
 
 

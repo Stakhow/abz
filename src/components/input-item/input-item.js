@@ -88,16 +88,10 @@ class InputItem extends Component {
         }
         return '';
     }
-
-    
-
     
     render(){
         const { id, name, type, label, placeholder } = this.props.inputsData;
         const {error, errMessage} = this.state;
-        
-        let numberTel = 0;
-        
         const style = error === null ? '' : error === true ? 'error-input' : 'success-input';
         
         if (name === 'name' || name === 'email' ) {

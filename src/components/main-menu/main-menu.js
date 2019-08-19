@@ -3,7 +3,7 @@ import './main-menu.sass'
 import { connect } from 'react-redux';
 
 const MainMenu  = ({menuData}) => {
-
+	
     return (
         <nav className="main-menu">
             <ul>
@@ -20,7 +20,7 @@ const MainMenu  = ({menuData}) => {
 
 const mapStateToProps = (state) => {
     return {
-        menuData : state["main-menu"]
+        menuData : state.mainMenu
     }
 }
 

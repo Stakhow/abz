@@ -4,34 +4,13 @@ import './contacts.sass';
 import {ReactComponent as mailIco}  from './../../media/icons/mail.svg';
 import {ReactComponent as phoneIco}  from './../../media/icons/phone.svg';
 import {ReactComponent as cellphoneIco} from './../../media/icons/cellphone.svg';
+import { connect } from 'react-redux';
 
-
-const contactLinksData = [
-    {
-        link: "work.of.future@gmail.com",
-        text: "work.of.future@gmail.com",
-        icon: mailIco,
-        type: "mail"
-    },
-    {
-        link: "+38 (050) 789 24 98",
-        text: "+38 (050) 789 24 98",
-        icon: phoneIco,
-        type: "tel"
-    },
-    {
-        link: "+38 (095) 556 08 45",
-        text: "+38 (095) 556 08 45",
-        icon: cellphoneIco,
-        type: "tel"
-    },
-]
-
-const Contacts = () => {
+const Contacts = ({contacts}) => {
     return (
         <div className="contact-list">
             <ul>
-                {contactLinksData.map( (item, idx) => {
+                {contacts.map( (item, idx) => {
                     switch (item.type) {
                         case 'mail' : item.type = 'mailto:';
                         break;
@@ -55,5 +34,11 @@ const Contacts = () => {
     )
 }
 
+const mapStateToProps = (state) => {
+	return {
+		contacts: state.contacts
+	}
+}
 
-export default Contacts
+
+export default connect(mapStateToProps)(Contacts)

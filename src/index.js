@@ -2,18 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 import './assets/scripts/common'
-import { createStore, bindActionCreators } from "redux";
+import { createStore, applyMiddleware,  } from "redux";
 import {Provider} from "react-redux";
-
+import initialState from './initial-state.js';
 import reducer from './reducers'
-import * as actions from './actions/actions';
+import thunk from 'redux-thunk';
 
-const store = createStore(reducer);
-const { dispatch } = store;
-
-// const { getMenu } = bindActionCreators(actions, dispatch);
-
-
+const store = createStore(reducer, initialState, applyMiddleware(thunk));
 
 store.subscribe(()=>{
     console.log(store.getState());

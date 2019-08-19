@@ -1,8 +1,8 @@
 import React from 'react';
 import './about-me.sass';
-
-import img_src from './../../media/img/man-mobile.svg';
+import LinkPrimary from "../link-primary.js/link-primary";
 import { connect } from 'react-redux';
+
 
 const AboutMe = ({props}) => {
     const {title, subtitle, content, button, image} = props;
@@ -17,13 +17,13 @@ const AboutMe = ({props}) => {
                 </div>
                 <div className="row">
                     <div className="col-lg-4">
-                        <img src={img_src} alt=""/>
+                        <img src={`media/img/${image}`} alt=""/>
                     </div>
                     <div className="col-lg-8">
-
+                        
                         <h3>{subtitle}</h3>
                         <Content/>
-                        <a href="#registation" className="link link-primary">Sign Up</a>
+                        <LinkPrimary {...button}/>
                     </div>
                 </div>
             </div>

@@ -1,37 +1,10 @@
 import React from "react";
 import './full-menu.sass'
+import { connect  } from 'react-redux';
 
 
-const fullMenuData = [
-    [
-        {link : "News", text: "News"},
-        {link : "Blog", text: "Blog"},
-        {link : "Partners", text: "Partners"},
-        {link : "Shop", text: "Shop"}
-    ],
-    [
-        {link : "Overview", text: "Overview"},
-        {link : "Design", text: "Design"},
-        {link : "Code", text: "Code"},
-        {link : "Collaborate", text: "Collaborate"}
-    ],
-    [
-        {link : "Tutorials", text: "Tutorials"},
-        {link : "Resources", text: "Resources"},
-        {link : "Guides", text: "Guides"},
-        {link : "Examples", text: "Examples"}
-    ],
-    [
-        {link : "FAQ", text: "FAQ"},
-        {link : "Terms", text: "Terms"},
-        {link : "Conditions", text: "Conditions"},
-        {link : "Help", text: "Help"}
-    ],
-];
-
-
-const FullMenu  = () => {
-    const Menu = fullMenuData.map((menuItem, idx) => {
+const FullMenu  = ({fullMenu}) => {
+    const Menu = fullMenu.map((menuItem, idx) => {
         return (
             <div key={`full-menu__item_${idx}`} className="col-auto full-menu__item">
                 <ul>
@@ -44,7 +17,6 @@ const FullMenu  = () => {
                     } )}
                 </ul>
             </div>
-
         )
     });
     
@@ -55,4 +27,13 @@ const FullMenu  = () => {
     )
 }
 
-export default FullMenu
+
+
+const mapStateToProps = (state) => {
+	return {
+		fullMenu : state.fullMenu
+	}
+}
+
+
+export default connect(mapStateToProps)(FullMenu);

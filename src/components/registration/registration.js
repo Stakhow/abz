@@ -26,7 +26,7 @@ const inputsData = {
  */
 const getRequireFields = (obj = {}) => {
     const newObj = {};
-    Object.keys(obj).map(item => { newObj[item] = !obj[item].req });
+    Object.keys(obj).map(item => { return  newObj[item] = !obj[item].req });
     return newObj;
 };
 
@@ -100,7 +100,7 @@ class Registration extends Component {
      */
     formHandle (e) {
         e.preventDefault();
-        const inputsName = Object.keys(inputsData);
+        // const inputsName = Object.keys(inputsData);
         this.setState(({loading}) => {return { loading: !loading }});
         const token = this.state.token;
         const data = new FormData( e.target );

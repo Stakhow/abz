@@ -18,16 +18,16 @@ class InputItemSelect extends Component {
             .getPositions('positions')
             .then(({positions}) => {
                 positions.map((position) => {
-                    position.selectItemId = `select-item_${position.id}`;
+                	return (
+						position.selectItemId = `select-item_${position.id}`
+					)
+                
                 });
                 this.setState({
                     positions: positions
                 });
             });
     }
-    
-
-  
     
     render() {
         const {positions} = this.state;

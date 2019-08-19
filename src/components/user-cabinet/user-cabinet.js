@@ -3,6 +3,7 @@ import './user-cabinet.sass';
 import {ReactComponent as SignOut}  from "../../media/icons/sign-out.svg";
 import AbzService from './../../service/AbzService.js'
 import Spinner from "../spinner/spinner";
+import BtnSecondary from "../btn-secondary/btn-secondary";
 
 
 
@@ -39,12 +40,12 @@ class UserCabinet extends Component{
         const SingIn = () => {
             return (
                 <div className="d-flex justify-content-end">
-                    <a href="#">Sign in</a>
+					<BtnSecondary text="Sign in"/>
                 </div>
             )
         }
         const {loggedIn, loading} = this.state;
-        const { email, id, name, phone, photo, position, position_id, } = this.state.user;
+        const { email, name, photo} = this.state.user;
         return (
             loggedIn === true ?
                 loading === true ?
@@ -59,9 +60,9 @@ class UserCabinet extends Component{
                             <img src={photo} alt=""/>
                         </div>
                         <div className="user-cabinet__link">
-                            <a href="javascript:void(0)" className="sign-out">
+                            <button className="sign-out">
                                 <SignOut onClick={this.logOut}/>
-                            </a>
+                            </button>
                         </div>
                     </div>
             :

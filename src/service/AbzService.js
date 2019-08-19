@@ -12,7 +12,7 @@ export default class AbzService {
         return body
     }
 
-    async getUsers (page, count) {
+    async getUsers (page=1, count=6) {
         const url = `${this.apiBase}users?page=${page}&count=${count}`;
         return this._fetchData (url);
 
@@ -22,7 +22,7 @@ export default class AbzService {
         const url = `${this.apiBase}${positions}`;
         return this._fetchData (url);
     }
-    async getUser (userId) {
+    async getUser (userId=1) {
         const url = `${this.apiBase}users/${userId}`;
         return this._fetchData (url);
     }

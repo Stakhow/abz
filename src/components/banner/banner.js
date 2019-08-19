@@ -1,20 +1,21 @@
 import React from 'react';
 import './banner.sass';
 
-import bg_image from '../../media/img/bg-1-min.jpg'
+// import bg_image from '../../media/img/bg-1-min.jpg'
 import BtnPrimary from "../btn-primary/btn-primary";
 import { connect } from 'react-redux';
 
 
 const Banner = ({props}) => {
-    const { title, content, button } = props;
-    console.log(content);
+    const { title, content, button, bgImage } = props;
+    const bg_image = `media/img/${bgImage}`;
+    // const bg_image = `${base}${bgImage}`;
     const style = {
         backgroundImage: `url( ${bg_image} )`,
-    }
-    
+    };
+
     const Content = () => { return content.map( (item, idx) => { return <p key={idx}>{item}</p> }) };
-    
+
     return (
         <section className="common-section banner" style={style}>
             <div className="container">
@@ -33,7 +34,7 @@ const Banner = ({props}) => {
 }
 const mapStateToProps = (state) => {
     return {
-        props: state["banner"]
+        props: state.banner
     }
 }
 

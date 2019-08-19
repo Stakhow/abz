@@ -1,7 +1,5 @@
-import React, {Component, PropTypes,} from  'react';
+import React, { Component } from  'react';
 import './app.sass';
-import { connect } from 'react-redux';
-
 
 import Header from './components/header/header';
 import Banner from "./components/banner/banner";
@@ -16,7 +14,6 @@ class App extends Component {
     
    
     render() {
-        console.log('this.props.testStore', this.props.testStore);
         return (
             <div>
                 <Header/>
@@ -36,9 +33,4 @@ class App extends Component {
 }
 
 
-export default connect(
-    state => ({
-        testStore: state
-    }),
-    dispatch => ({})
-)(App);
+export default App;

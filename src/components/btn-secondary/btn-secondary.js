@@ -1,11 +1,13 @@
 import React from 'react';
 import './btn-secondary.sass';
+import Spinner from "../spinner/spinner";
 
 const BtnSecondary = (props) => {
-    const { loadMore, text } = props;
-    // const text = props.text;
+    const { text, onClickHandler, status=false } = props;
+    console.log('status', status);
+    if (status) return <Spinner/>
     return (
-        <button onClick={loadMore} className="btn btn-secondary">{text}</button>
+        <button onClick={onClickHandler} className="btn btn-secondary" disabled={status}>{text}</button>
     )
 }
 
